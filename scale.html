@@ -5,9 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>적정체중 데스트</title>
+    <title>적정체중 테스트</title>
+    <link rel="stylesheet" href="./style/reset.css">
+    <link rel="stylesheet" href="./style/scale.css">
 </head>
 <body>
-    
+    <main>
+        <h1>적정체중 테스트</h1>
+        <div class="height">
+            <p>키</p>
+            <input type="text" id="user_height" placeholder="키 입력">
+        </div>
+        <div class="weight">
+            <p>몸무게</p>
+            <input type="text" id="user_weight" placeholder="몸무게 입력">
+        </div>
+        <button type="button" id="normal_w">확인</button>
+        <div class="result">
+            <p>결과</p>
+            <span id="result_screen"></span>
+        </div>
+        <script src="./script/scale.js"></script>
+    </main>
 </body>
 </html>
