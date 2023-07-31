@@ -1,26 +1,38 @@
-main {
-    background:lightblue; 
-    width: 500px; height: 300px; margin: 0 auto;
-    display: flex; flex-flow: column nowrap; align-items: center; justify-content: space-around;
+main {}
+main .contents {
+    width: 600px; height: 500px; margin: 100px auto;
+    display: flex; flex-flow: column nowrap; 
+    align-items: center; justify-content: space-around;
+    border: 3px solid #000; border-radius: 30px;
 }
 main h1 {
-    font-size: 2rem; font-weight: 500; letter-spacing: -0.02em;
+    font-size: 2.5rem; font-weight: 500; letter-spacing: -0.02em;
 }
-main h2 {}
+main h2 {letter-spacing: -0.02em;}
 main .height {
     display: flex; flex-flow: row nowrap;
 }
-main .height p {margin-right: 40px;}
-main .height #user_height {}
+main .height p {
+    margin-right: 40px; font-size: 1.2rem; 
+    font-weight: 500; letter-spacing: -0.02em;
+}
+main .height #user_height {border: 1px solid #aaa;}
 main .weight {
     display: flex; flex-flow: row nowrap;
 }
-main .weight p {margin-right: 10px;}
-main .weight p #user_weight {}
-main #button {width: 100px; height: 30px;}
+main .weight p {
+    margin-right: 10px; font-size: 1.2rem; 
+    font-weight: 500; letter-spacing: -0.02em;
+}
+main .weight #user_weight {border: 1px solid #aaa;}
+main #button {
+    width: 150px; height: 40px;
+    border-radius: 30px;
+    font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em;
+}
 main .result {}
-main .result p {}
+main .result p {text-align: center; margin-bottom: 5px;}
 main .result span {
-    width: 400px; height: 40px; background:pink; display: block;
+    width: 400px; height: 50px; background:pink; display: block;
     text-align: center; 
 }

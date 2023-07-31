@@ -11,22 +11,24 @@
 </head>
 <body>
     <main>
-        <h1>적정체중 테스트</h1>
-        <h2>나의 적정체중을 테스트 해보자 !</h2>
-        <div class="height">
-            <p>키</p>
-            <input type="text" id="user_height" placeholder="키 입력">
+        <div class="contents">
+            <h1>적정체중 테스트</h1>
+            <h2>테스트를 통해 나의 적정체중 알아보자 !</h2>
+            <div class="height">
+                <p>키</p>
+                <input type="text" id="user_height" placeholder="키를 입력하세요.">
+            </div>
+            <div class="weight">
+                <p>몸무게</p>
+                <input type="text" id="user_weight" placeholder="몸무게를 입력하세요.">
+            </div>
+            <button type="button" id="button">확인</button>
+            <div class="result">
+                <p>결과</p>
+                <span id="result_screen"></span>
+            </div>
+            <script src="./script/scale.js"></script>
         </div>
-        <div class="weight">
-            <p>몸무게</p>
-            <input type="text" id="user_weight" placeholder="몸무게 입력">
-        </div>
-        <button type="button" id="button">확인</button>
-        <div class="result">
-            <p>결과보기</p>
-            <span id="result_screen"></span>
-        </div>
-        <script src="./script/scale.js"></script>
     </main>
 </body>
 </html>
