@@ -5,28 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>Document</title>
+    <title>구구단</title>
     <link rel="stylesheet" href="./style/reset.css">
     <link rel="stylesheet" href="./style/dan99.css">
 </head>
 <body>
     <main>
-        <h1>구구단을 외자!</h1>
-        <h2>2단</h2>
-        <div class="contents">
-            <ul>
-                <li>2 X 1 = <span class="an"></span></li>
-                <li>2 X 2 = <span class="an"></span></li>
-                <li>2 X 3 = <span class="an"></span></li>
-                <li>2 X 4 = <span class="an"></span></li>
-                <li>2 X 5 = <span class="an"></span></li>
-                <li>2 X 6 = <span class="an"></span></li>
-                <li>2 X 7 = <span class="an"></span></li>
-                <li>2 X 8 = <span class="an"></span></li>
-                <li>2 X 9 = <span class="an"></span></li>
-            </ul>
+        <div class="dan">
+            <h1>구구단을 외자!</h1>
+            <h2><em>2단</em> 외워보기!</h2>
+            <div class="contents">
+                <input type="text" id="dan2" value="2" readonly>X <!-- readonly읽기전용 -->
+                <input type="text" id="calc">=
+                <input type="text" id="result">
+                <button type="button" id="test">정답보기</button>
+                <!-- <ul>
+                    <li>2 X <input class="num"> = <input class="an"></li>
+                </ul>
+                <button type="button" id="see">정답보기</button> -->
+            </div>
         </div>
-        <button type="button" id="see">정답보기</button>
     </main>
     <script src="./script/dan99.js"></script>
 </body>

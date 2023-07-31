@@ -1,0 +1,49 @@
+
+main {}
+main .dan {
+    width: 300px; margin: 100px auto; height: 200px;
+    display: flex; flex-flow: column nowrap; 
+    align-items: center; justify-content: center;
+    border: 3px solid #aaa;
+    border-radius: 30px;
+}
+main .dan h1 {
+    font-size: 2rem; font-weight: 500; 
+    letter-spacing: -0.02em; 
+    margin: 20px 0;
+    color: lightcoral;
+}
+main .dan h2 {
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+}
+main .dan h2 em {
+    font-size: 1.2rem; font-weight: 500; color: lightcoral;
+}
+main .dan .contents {margin-bottom: 5px;
+    display: flex; flex-flow: row nowrap; align-items: center;
+    height: 30px;
+}
+main .dan .contents #dan2 {
+    width: 20px; 
+}
+main .dan .contents #calc {
+    display: block;
+    border: 1px solid #aaa;
+    width: 20px;
+    margin: 0 5px;
+}
+main .dan .contents #result {
+    display: block;
+    border: 1px solid #aaa;
+    width: 30px;
+    margin: 0 5px;
+}
+main .dan .contents #test {
+    background: #fff;
+    width: 100px; height: 50px;
+    border:1px solid #aaa;
+    border-radius: 30px;
+    font-size: 1.2rem; font-weight: 500; 
+    letter-spacing: -0.02em; color: lightcoral;
+}
