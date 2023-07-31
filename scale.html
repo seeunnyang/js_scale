@@ -5,30 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>적정체중 테스트</title>
-    <link rel="stylesheet" href="./style/reset.css">
-    <link rel="stylesheet" href="./style/scale.css">
+    <title>적중체중</title>
+    <style>
+        .main {
+            border: 3px solid lightpink;
+            border-radius: 30px;
+            display: flex; flex-flow: column nowrap;
+            align-items: center; justify-content: center;
+            margin: 100px auto;
+            width: 500px; height: 500px;
+        }
+        h1 {color: lightcoral;}
+        p {}
+        p span {font-weight: 600;}
+        ul {
+            display: flex; flex-flow: column nowrap;
+            align-items: end;
+        }
+        ul li {margin-top: 10px;}
+        ul input {border: 1px solid lightcoral;}
+        ul #height {}
+        ul #weight {}
+        ul #normal {}
+        ul #weight2 {}
+        p {}
+        p #result {
+            width: 100px; height: 30px;
+            border-radius: 30px;
+            border: none;
+            background:lightpink; color: #fff;
+            font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em;
+        }
+    </style>
 </head>
 <body>
-    <main>
-        <div class="contents">
-            <h1>적정체중 테스트</h1>
-            <h2>테스트를 통해 나의 적정체중 알아보자 !</h2>
-            <div class="height">
-                <p>키</p>
-                <input type="text" id="user_height" placeholder="키를 입력하세요.">
-            </div>
-            <div class="weight">
-                <p>몸무게</p>
-                <input type="text" id="user_weight" placeholder="몸무게를 입력하세요.">
-            </div>
-            <button type="button" id="button">확인</button>
-            <div class="result">
-                <p>결과</p>
-                <span id="result_screen"></span>
-            </div>
-            <script src="./script/scale.js"></script>
-        </div>
-    </main>
+    <div class="main">
+        <h1>다이어트 체중계</h1>
+        <p>당신의 <span>건강몸무게</span>를 알아보세요 !</p>
+        <ul>
+            <li>현재 키 : <input type="text" id="height" placeholder="키를 입력해보세요."></li>
+            <li>현재 몸무게 : <input type="text" id="weight" placeholder="몸무게를 입력해보세요."></li>
+            <li>목표 몸무게 : <input type="text" id="normal" readonly></li>
+            <li>최종 감량 목표 : <input type="text" id="weight2" readonly></li>
+        </ul>
+        <p><button type="button" id="result">결과보기</button></p>
+    </div>
+    <script>
+        const userHeight = document.querySelector('#height'); //키
+        const userWeight = document.querySelector('#weight'); //몸무게
+        const normal = document.querySelector('#normal'); //목표몸무게
+        const userWeight2 = document.querySelector('#weight2'); //최종감량몸무게
+        const resultBtn = document.querySelector('#result'); //결과버튼
+        console.log(userHeight, userWeight, userWeight2, normal, resultBtn);
+        //결과 버튼 클릭 시
+        resultBtn.addEventListener('click',function(){
+            //1. 사용자가 입력한 키와 몸무게 정보 받아오기
+            let userH = Number(userHeight.value); //str > number
+            let userW = Number(userWeight.value);
+            console.log(userH, userW); //console 결과확인
+            let normal_w = (userH-100)*0.9; //적정체중 저장 변수
+            console.log(normal_w); //console 결과확인
+            normal.value = normal_w + 'kg' //목표몸무게 칸 변수삽입
+            let resultW = userW-normal_w; //몸무게변환변수-평균무게변수
+            console.log(resultW);
+            userWeight2.value = resultW +'kg';
+        })
+    </script>
 </body>
 </html>
