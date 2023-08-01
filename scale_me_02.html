@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>적정체중 연습</title>
+    <style>
+        p #screen {
+            display: block; width: 200px; height: 50px; border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <h1>적정체중 테스트</h1>
+    <h2>테스트를 통해 나의 적정체중을 알아보세요!</h2>
+    <ul>
+        <li>키<input type="text" id="height" placeholder="키를 입력하세요."></li>
+        <li>몸무게<input type="text" id="weight" placeholder="몸무게를 입력하세요."></li>
+    </ul>
+    <p>
+        <button type="button" id="btn">결과보기</button>
+        <span id="screen"></span>
+    </p>
+
+    <script>
+        //변수생성
+        const userHeight = document.querySelector('#height'); //키
+        const userWeight = document.querySelector('#weight'); //몸무게
+        const btn = document.querySelector('#btn'); //결과버튼
+        const screen = document.querySelector('#screen'); //결과창
+        console.log(userHeight, userWeight, btn, screen);
+        //키와 몸무게를 입력했을 때 결과창에 결과 뜨게 하기!
+        //결과 예시) 당신의 적정체중은 ??kg 이며, 초과몸무게는??kg 입니다
+        btn.addEventListener('click',function(){
+            //1.키,몸무게 정보 가져오기
+            let userH = Number(userHeight.value);
+            let userW = Number(userWeight.value);
+            console.log(userH, userW);
+            //2.적정체중변수 만들기
+            let normal_w = (userH-100)*0.9;
+            console.log(normal_w);
+            //3. 나머지값 변수 만들기
+            let userW2 = userW-normal_w;
+            console.log(userW2);
+            //결과창에 결과입력
+            screen.innerHTML = `당신의 적정체중은 ${normal_w}kg 이며, 초과몸무게는 ${userW2}kg 입니다 !`
+        })
+    </script>
+</body>
+</html>
