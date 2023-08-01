@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="keywords" content="">
     <meta name="description" content="">
-    <title>적중체중</title>
+    <title>적중체중테스트</title>
     <style>
         .main {
             border: 3px solid lightpink;
@@ -30,7 +30,7 @@
         ul #weight2 {}
         p {}
         p #result {
-            width: 100px; height: 30px;
+            width: 200px; height: 35px;
             border-radius: 30px;
             border: none;
             background:lightpink; color: #fff;
@@ -40,7 +40,7 @@
 </head>
 <body>
     <div class="main">
-        <h1>다이어트 체중계</h1>
+        <h1>적정체중 테스트</h1>
         <p>당신의 <span>건강몸무게</span>를 알아보세요 !</p>
         <ul>
             <li>현재 키 : <input type="text" id="height" placeholder="키를 입력해보세요."></li>
@@ -67,8 +67,8 @@
             console.log(normal_w); //console 결과확인
             normal.value = normal_w + 'kg' //목표몸무게 칸 변수삽입
             let resultW = userW-normal_w; //몸무게변환변수-평균무게변수
-            console.log(resultW);
-            userWeight2.value = resultW +'kg';
+            console.log(resultW); //console 결과확인
+            userWeight2.value = resultW +'kg'; //
         })
     </script>
 </body>
