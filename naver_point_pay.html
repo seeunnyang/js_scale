@@ -6,15 +6,50 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>네이버페이 포인트</title>
+    <link rel="stylesheet" href="./style/reset.css">
     <style>
-        main {}
-        main h1 {}
-        main .contents {}
-        main .contents .hold {}
+        main {
+            background: #f1f1f1;
+            width: 300px; height: 100px;
+            margin: 50px auto;
+            display: flex; flex-flow: column nowrap;
+            align-items: flex-start; 
+            padding:10px;
+            position: relative;
+        }
+        main h1 {
+            font-size: 1.2rem; font-weight:700;
+            margin-bottom:30px;
+        }
+        main .contents {
+            background:#fff;
+            width:200px;
+            display: flex; flex-flow: column nowrap; 
+            
+        }
+        main .contents .hold {
+            display: flex; flex-flow: row nowrap;
+            justify-content: space-between;
+        }
         main .contents .hold .title {}
         main .contents .hold p {}
-        main .contents .hold p span {}
-        main .contents .use {}
+        main .contents .hold p #price {
+            width: 100px;
+            display: block;
+        }
+        main .contents .use {
+            display: flex; flex-flow: row nowrap;
+            justify-content: space-between;
+        }
+        main .contents .use .title {}
+        main .contents .use p {}
+        main .contents .use p #price2 {}
+        main .contents .use #reset_btn {}
+        main .contents #use_btn {
+            background:#04ac29; color: #fff; 
+            padding:5px;
+            position: absolute; bottom:10px; right:10px;
+        }
     </style>
 </head>
 <body>
@@ -28,7 +63,7 @@
             <div class="use">
                 <p class="title">사용</p>
                 <p><span id="price2"></span>원</p>
-                <button type="button" id="reset">X</button>
+                <button type="button" id="reset_btn">X</button>
             </div>
             <button type="button" id="use_btn">전액사용</button>
         </div>
