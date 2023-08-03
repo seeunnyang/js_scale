@@ -25,30 +25,46 @@
             background:#fff;
             width:200px;
             display: flex; flex-flow: column nowrap; 
-            
+            border-radius: 10px;
         }
         main .contents .hold {
             display: flex; flex-flow: row nowrap;
             justify-content: space-between;
         }
         main .contents .hold .title {}
-        main .contents .hold p {}
-        main .contents .hold p #price {
-            width: 100px;
-            display: block;
+        main .contents .hold .price_wrap {
+            background: lightcoral;
+            display: flex; flex-flow: row nowrap;
         }
+        main .contents .hold .price_wrap #price {
+            width: 40px; height: 18px;
+            display: block;
+            border: 1px solid #000;
+        }
+        main .contents .hold .price_wrap em {}
         main .contents .use {
             display: flex; flex-flow: row nowrap;
             justify-content: space-between;
         }
         main .contents .use .title {}
-        main .contents .use p {}
-        main .contents .use p #price2 {}
-        main .contents .use #reset_btn {}
+        main .contents .use .price_wrap {
+            background: lightcoral;
+            display: flex; flex-flow: row nowrap;
+        }
+        main .contents .use .price_wrap #price2 {
+            width: 40px; height: 18px;
+            display: block;
+            border: 1px solid #000;
+        }
+        main .contents .use .price_wrap #reset_btn {
+            border: 1px solid #000; 
+            /* display:none; */
+        }
+        main .contents .use .price_wrap em {}
         main .contents #use_btn {
             background:#04ac29; color: #fff; 
             padding:5px;
-            position: absolute; bottom:10px; right:10px;
+            position: absolute; bottom:5px; right:10px;
         }
     </style>
 </head>
@@ -58,18 +74,40 @@
         <div class="contents">
             <div class="hold">
                 <p class="title">보유</p>
-                <p><span id="price"></span>원</p>
+                <p class="price_wrap"><span id="price"></span><em>원</em></p>
             </div>
             <div class="use">
                 <p class="title">사용</p>
-                <p><span id="price2"></span>원</p>
-                <button type="button" id="reset_btn">X</button>
+                <p class="price_wrap">
+                    <span id="price2"></span>
+                    <button type="button" id="reset_btn">X</button>
+                    <em>원</em>
+                </p>
             </div>
             <button type="button" id="use_btn">전액사용</button>
         </div>
     </main>
     <script>
-        
+        /* 
+        1) 보유포인트에 1000원 대입하기
+        2) x버튼 초기 숨기기(초기값은 0이므로 초기화할 수 없으므로 초반 숨기기)
+        3-1) 전액 사용 버튼 클릭 시 보유포인트 전체값이 사용포인트로 전환되기
+        3-2) 전환 후 보유포인트의 남은 값을 0으로 만들기
+        4) 사용포인트로 전환된 값이 1 이상일 시 x 버튼 활성화하기
+        5) 보유포인트가 1000원이상이면 사용포인트로 전환되고 1000원 이하면 1000원 이상 사용가능합니다. 팝업창 출력하기
+        6) x 버튼 클릭 시 사용포인트가 0원으로 초기화되고 x버튼 숨기기
+        7) 사용포인트가 0원이 되면서 사용에 있던 포인트값이 다시 보유포인트로 복귀되게 만들기
+        */
+        //변수 만들기 (보유포인트, 사용포인트, 리셋버튼, 전액사용버튼)
+        const price = document.querySelector('#price') //보유포인트
+        const price2 = document.querySelector('#price2') //사용포인트
+        const resetBtn = document.querySelector('#reset_btn') //리셋버튼
+        const useBtn = document.querySelector('#use_btn') //전액사용버튼
+        console.log(price, price2, resetBtn, useBtn)
+        //1. 보유포인트에 1,000원 대입하기
+        price.innerHTML = 1000
+        //2. x버튼 초기 숨기기
+        resetBtn.innerHTML = 
     </script>
 </body>
 </html>
